@@ -31,8 +31,7 @@
             <p class="hero-subtitle">Search and explore the essential utilities for your Linux distribution.</p>
 
             <div class="search-container">
-                <input type="text" id="toolSearch" class="search-input"
-                    placeholder="Search for a tool...">
+                <input type="text" id="toolSearch" class="search-input" placeholder="Search for a tool...">
             </div>
         </div>
     </section>
@@ -112,21 +111,9 @@
     </section>
 
     <footer class="footer">
-        &copy; 2023 LinuxToolbox. Built for the community.
+        &copy; 2026 LinuxForSchool. Built as a school project.
     </footer>
-
-    <script>
-        document.getElementById('toolSearch').addEventListener('keyup', function () {
-            let filter = this.value.toLowerCase();
-            let items = document.querySelectorAll('.tool-item');
-
-            items.forEach(item => {
-                let text = item.innerText.toLowerCase();
-                item.style.display = text.includes(filter) ? 'flex' : 'none';
-            });
-        });
-    </script>
-
+    <script src="script.js"></script>
 </body>
 
 </html>
