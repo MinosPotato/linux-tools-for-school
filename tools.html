@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Tools - LinuxToolbox</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <span class="gradient">LINUX</span>TOOLBOX
+            </div>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="tools.html">All Tools</a>
+                <a href="#">Guides</a>
+                <a href="#">About</a>
+            </div>
+            <a href="#" class="btn-tools">GitHub</a>
+        </div>
+    </nav>
+
+    <section class="tools-header">
+        <div class="container">
+            <h1>Tool <span class="gradient">Directory</span></h1>
+            <p class="hero-subtitle">Search and explore the essential utilities for your Linux distribution.</p>
+
+            <div class="search-container">
+                <input type="text" id="toolSearch" class="search-input"
+                    placeholder="Search for a tool (e.g. htop, vim, tmux)...">
+            </div>
+        </div>
+    </section>
+
+    <section class="container">
+        <div class="tool-list" id="toolList">
+
+            <!-- System Tools -->
+            <a href="#" class="tool-item">
+                <div class="tool-info">
+                    <h3>htop</h3>
+                    <p>Interactive process viewer and system monitor.</p>
+                </div>
+                <span class="tool-category">System</span>
+            </a>
+
+            <a href="#" class="tool-item">
+                <div class="tool-info">
+                    <h3>Neofetch</h3>
+                    <p>Displays system information and distro logo in the terminal.</p>
+                </div>
+                <span class="tool-category">System</span>
+            </a>
+
+            <!-- Dev Tools -->
+            <a href="#" class="tool-item">
+                <div class="tool-info">
+                    <h3>Vim / Neovim</h3>
+                    <p>Highly configurable text editors for the terminal.</p>
+                </div>
+                <span class="tool-category">Development</span>
+            </a>
+
+            <a href="#" class="tool-item">
+                <div class="tool-info">
+                    <h3>Tmux</h3>
+                    <p>Terminal multiplexer allowing multiple sessions in one window.</p>
+                </div>
+                <span class="tool-category">Development</span>
+            </a>
+
+            <!-- File Tools -->
+            <a href="#" class="tool-item">
+                <div class="tool-info">
+                    <h3>Ranger</h3>
+                    <p>Vim-inspired file manager with a multi-column layout.</p>
+                </div>
+                <span class="tool-category">Files</span>
+            </a>
+
+            <a href="#" class="tool-item">
+                <div class="tool-info">
+                    <h3>fzf</h3>
+                    <p>Command-line fuzzy finder for lightning-fast searching.</p>
+                </div>
+                <span class="tool-category">Files</span>
+            </a>
+
+            <!-- Network Tools -->
+            <a href="#" class="tool-item">
+                <div class="tool-info">
+                    <h3>Curl</h3>
+                    <p>Tool for transferring data with URLs (HTTP, FTP, etc).</p>
+                </div>
+                <span class="tool-category">Network</span>
+            </a>
+
+            <a href="#" class="tool-item">
+                <div class="tool-info">
+                    <h3>Dig</h3>
+                    <p>DNS lookup utility for network troubleshooting.</p>
+                </div>
+                <span class="tool-category">Network</span>
+            </a>
+
+        </div>
+    </section>
+
+    <footer class="footer">
+        &copy; 2023 LinuxToolbox. Built for the community.
+    </footer>
+
+    <script>
+        document.getElementById('toolSearch').addEventListener('keyup', function () {
+            let filter = this.value.toLowerCase();
+            let items = document.querySelectorAll('.tool-item');
+
+            items.forEach(item => {
+                let text = item.innerText.toLowerCase();
+                item.style.display = text.includes(filter) ? 'flex' : 'none';
+            });
+        });
+    </script>
+
+</body>
+
+</html>
