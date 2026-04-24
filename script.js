@@ -1,13 +1,21 @@
-// Change navbar appearance on scroll
-window.addEventListener('scroll', () => {
-    const nav = document.querySelector('.navbar');
-    if (window.scrollY > 50) {
-        nav.style.padding = '10px 0';
-        nav.style.boxShadow = '0 4px 20px rgba(0,0,0,0.3)';
-    } else {
-        nav.style.padding = '16px 0';
-        nav.style.boxShadow = 'none';
+const easterword = "screw";
+let inputBuffer = "";
+
+window.addEventListener('keydown', (e) => {
+    inputBuffer += e.key.toLowerCase();
+
+    if (inputBuffer.length > easterword.length) {
+        inputBuffer = inputBuffer.substring(1);
+    }
+
+    if (inputBuffer === easterword) {
+        easteregg();
     }
 });
 
-console.log("Website loaded successfully.");
+function easteregg() {
+    document.getElementById('easteregg1').innerHTML = "🖕 Microsoft";
+    document.getElementById('easteregg2').innerHTML = "Screw them →";
+
+
+}
