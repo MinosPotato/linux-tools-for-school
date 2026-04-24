@@ -184,16 +184,10 @@ body {
     border-radius: 8px;
 }
 
-.icon-blue {
-    background-color: #2563eb;
-}
-
-.icon-purple {
-    background-color: #9333ea;
-}
-
-.icon-indigo {
-    background-color: #4f46e5;
+.icon img {
+    width: 48px;
+    height: 48px;
+    border-radius: 8px;
 }
 
 /* Footer */
