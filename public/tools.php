@@ -1,33 +1,41 @@
 <?php
 try {
-    $db = new PDO('sqlite:../private/data/tools.db');
-    $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    $pdo = new PDO('sqlite:../private/data/tools.db');
+    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 } catch (PDOException $e) {
     die("Database connection failed: " . $e->getMessage());
 }
 
-// 1. Fetch tools and a COMMA-SEPARATED list of their categories
-$toolQuery = "SELECT tools.name, tools.url, tools.description, 
+try {
+    $stmt = $pdo->query("SELECT tools.name, tools.url, tools.description,
               GROUP_CONCAT(categories.name, ', ') as category_list
-              FROM tools 
+              FROM tools
               JOIN tool_categories ON tools.id = tool_categories.tool_id
               JOIN categories ON tool_categories.category_id = categories.id
-              GROUP BY tools.id";
-$tools = $db->query($toolQuery)->fetchAll(PDO::FETCH_ASSOC);
+              GROUP BY tools.id");
+    $tools = $stmt->fetchAll(PDO::FETCH_ASSOC);
+} catch (PDOException $e) {
+    die("Database query failed: " . $e->getMessage());
+}
 
-// 2. Fetch all categories for the dropdown
-$catQuery = "SELECT * FROM categories ORDER BY name ASC";
-$allCategories = $db->query($catQuery)->fetchAll(PDO::FETCH_ASSOC);
+try {
+    $stmt = $pdo->query("SELECT * FROM categories ORDER BY name ASC");
+    $allCategories = $stmt->fetchAll(PDO::FETCH_ASSOC);
+} catch (PDOException $e) {
+    die("Database category list query failed: " . $e->getMessage());
+}
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>All Tools - LinuxToolbox</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="/public/style/style.css">
 </head>
+
 <body>
 
     <nav class="navbar">
@@ -36,7 +44,7 @@ $allCategories = $db->query($catQuery)->fetchAll(PDO::FETCH_ASSOC);
                 <span class="gradient">LINUX</span>FORSCHOOL
             </div>
             <div class="nav-links">
-                <a href="./">Home</a>
+                <a href="/">Home</a>
                 <a href="tools.html">All Tools</a>
             </div>
             <a href="https://github.com/MinosPotato" class="btn-tools">My GitHub</a>
@@ -65,20 +73,20 @@ $allCategories = $db->query($catQuery)->fetchAll(PDO::FETCH_ASSOC);
         <div class="tool-list" id="toolList">
             <?php if (count($tools) > 0): ?>
                 <?php foreach ($tools as $tool): ?>
-                    <a href="<?php echo htmlspecialchars($tool['url']); ?>" 
-                       target="_blank" class="tool-item" 
-                       data-categories="<?php echo htmlspecialchars($tool['category_list']); ?>">
+                    <a href="<?php echo htmlspecialchars($tool['url']); ?>"
+                        target="_blank" class="tool-item"
+                        data-categories="<?php echo htmlspecialchars($tool['category_list']); ?>">
                         <div class="tool-info">
                             <h3 class="tool-name"><?php echo htmlspecialchars($tool['name']); ?></h3>
                             <p class="tool-desc"><?php echo htmlspecialchars($tool['description']); ?></p>
                         </div>
                         <div class="tool-tags">
-                            <?php 
+                            <?php
 
-                                $tags = explode(', ', $tool['category_list']);
-                                foreach($tags as $tag) {
-                                    echo "<span class='category-tag'>" . htmlspecialchars($tag) . "</span>";
-                                }
+                            $tags = explode(', ', $tool['category_list']);
+                            foreach ($tags as $tag) {
+                                echo "<span class='category-tag'>" . htmlspecialchars($tag) . "</span>";
+                            }
                             ?>
                         </div>
                     </a>
@@ -116,4 +124,5 @@ $allCategories = $db->query($catQuery)->fetchAll(PDO::FETCH_ASSOC);
         categorySelect.addEventListener('change', filterTools);
     </script>
 </body>
+
 </html>

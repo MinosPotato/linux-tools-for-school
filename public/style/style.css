@@ -3,15 +3,16 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+
 }
 
 body {
     background-color: #0f172a;
-    /* Deep dark navy */
     color: #e2e8f0;
     font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
     line-height: 1.5;
     -webkit-font-smoothing: antialiased;
+    height: 100%;
 }
 
 .container {
@@ -20,7 +21,6 @@ body {
     padding: 0 20px;
 }
 
-/* Typography & Gradients */
 .gradient {
     background: linear-gradient(90deg, #3b82f6, #8b5cf6);
     -webkit-background-clip: text;
@@ -28,7 +28,7 @@ body {
     font-weight: bold;
 }
 
-/* Navigation */
+
 .navbar {
     position: fixed;
     top: 0;
@@ -88,7 +88,6 @@ body {
     background-color: #3b82f6;
 }
 
-/* Hero Section */
 .hero {
     padding: 120px 0 80px 0;
     text-align: center;
@@ -145,7 +144,6 @@ body {
     background-color: #1e293b;
 }
 
-/* Features Grid */
 .features {
     padding: 80px 0;
 }
@@ -190,7 +188,7 @@ body {
     border-radius: 8px;
 }
 
-/* Footer */
+
 .footer {
     padding: 40px 0;
     text-align: center;
@@ -199,7 +197,6 @@ body {
     font-size: 0.875rem;
 }
 
-/* Mobile Responsive */
 @media (max-width: 768px) {
     .nav-links {
         display: none;
@@ -213,8 +210,6 @@ body {
         flex-direction: column;
     }
 }
-
-/* --- Tool Page Styles --- */
 
 .tools-header {
     padding: 120px 0 40px 0;
@@ -290,7 +285,6 @@ body {
     color: #cbd5e1;
 }
 
-/* Utility class for highlighting the active nav link */
 .link-tools {
     color: #3b82f6 !important;
     opacity: 1 !important;
@@ -329,7 +323,6 @@ body {
     width: 300px;
 }
 
-/* Style for multiple labels */
 .category-tag {
     font-size: 0.65rem;
     text-transform: uppercase;

@@ -1,5 +1,6 @@
 RewriteEngine On
 
+
 RewriteRule ^private/(.*)$ /redirect.html [L,R=301]
 
 
