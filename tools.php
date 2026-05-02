@@ -1,6 +1,6 @@
 <?php
 try {
-    $pdo = new PDO('sqlite:../private/data/tools.db');
+    $pdo = new PDO('sqlite:private/data/tools.db');
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 } catch (PDOException $e) {
     die("Database connection failed: " . $e->getMessage());
@@ -8,11 +8,11 @@ try {
 
 try {
     $stmt = $pdo->query("SELECT tools.name, tools.url, tools.description,
-              GROUP_CONCAT(categories.name, ', ') as category_list
-              FROM tools
-              JOIN tool_categories ON tools.id = tool_categories.tool_id
-              JOIN categories ON tool_categories.category_id = categories.id
-              GROUP BY tools.id");
+            GROUP_CONCAT(categories.name, ', ') as category_list
+            FROM tools
+            JOIN tool_categories ON tools.id = tool_categories.tool_id
+            JOIN categories ON tool_categories.category_id = categories.id
+            GROUP BY tools.id");
     $tools = $stmt->fetchAll(PDO::FETCH_ASSOC);
 } catch (PDOException $e) {
     die("Database query failed: " . $e->getMessage());
@@ -33,7 +33,7 @@ try {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>All Tools - LinuxToolbox</title>
-    <link rel="stylesheet" href="/public/style/style.css">
+    <link rel="stylesheet" href="style/style.css">
 </head>
 
 <body>
@@ -41,11 +41,11 @@ try {
     <nav class="navbar">
         <div class="nav-container">
             <div class="logo">
-                <span class="gradient">LINUX</span>FORSCHOOL
+                LINUX FORSCHOOL
             </div>
             <div class="nav-links">
                 <a href="/">Home</a>
-                <a href="tools.html">All Tools</a>
+                <a href="/tools.php">All Tools</a>
             </div>
             <a href="https://github.com/MinosPotato" class="btn-tools">My GitHub</a>
         </div>
@@ -53,10 +53,9 @@ try {
 
     <section class="tools-header">
         <div class="container">
-            <h1>Tool <span class="kali-gradient">Directory</span></h1>
-            <p class="hero-subtitle">Instant search through the essential utilities for Linux.</p>
+            <h1>Tool Directory</h1>
             <div class="filter-group">
-                <input type="text" id="searchInput" class="filter-input" placeholder="Search tools instantly...">
+                <input type="text" id="searchInput" class="filter-input" placeholder="Search tools..">
                 <select id="categorySelect" class="filter-select">
                     <option value="all">All Categories</option>
                     <?php foreach ($allCategories as $cat): ?>
@@ -97,7 +96,11 @@ try {
         </div>
     </section>
 
-    <footer class="footer">&copy; 2023 LinuxToolbox. Built for the community.</footer>
+    <footer class="footer">
+        Built as a school project.
+    </footer>
+
+    <script src="script.js"></script>
 
     <script>
         const searchInput = document.getElementById('searchInput');
