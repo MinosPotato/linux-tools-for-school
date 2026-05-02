@@ -32,22 +32,20 @@ try {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>All Tools - LinuxToolbox</title>
+    <title>All Tools - Linux for school</title>
     <link rel="stylesheet" href="style/style.css">
 </head>
 
 <body>
 
-    <nav class="navbar">
+	<nav class="navbar">
         <div class="nav-container">
-            <div class="logo">
-                LINUX FORSCHOOL
-            </div>
+            <a href="./" class="logo"">LINUX FOR SCHOOL</a>
             <div class="nav-links">
                 <a href="/">Home</a>
-                <a href="/tools.php">All Tools</a>
+                <a href="tools.php">All Tools</a>
             </div>
-            <a href="https://github.com/MinosPotato" class="btn-tools">My GitHub</a>
+            <a href="https://github.com/MinosPotato" class="btn-github">My GitHub</a>
         </div>
     </nav>
 
