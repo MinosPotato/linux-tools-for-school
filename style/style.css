@@ -265,10 +265,10 @@ font-size: 0.65rem;
 text-transform: uppercase;
 font-weight: 700;
 padding: 3px 8px;
-border: 1px solid var(--border2);
-border-radius: 0px;
+border: 2px solid var(--text2);
+border-radius: 8px;
 background: transparent;
-color: var(--text3);
+color: var(--text2);
 }
 
 .footer {
