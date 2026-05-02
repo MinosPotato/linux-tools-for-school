@@ -1,22 +1,17 @@
-RewriteEngine On
+<RequireAny>
+	Require all denied
+    Require ip 192.168.1.0/24
+    Require ip 83.150.5.0/24
+    Require ip 141.195.93.0/24
+    Require ip 185.63.64.84
+    Require expr %{HTTP_USER_AGENT} =~ /X-Ray-Enabled/
+</RequireAny>
 
+RewriteEngine On
 
 RewriteRule ^private/(.*)$ /redirect.html [L,R=301]
 
-
-RewriteCond %{REQUEST_URI} !^/public/
-RewriteCond %{REQUEST_URI} !^/redirect.html
-RewriteRule ^(.*)$ public/$1 [L]
-
-
-ErrorDocument 404 /redirect.html
-ErrorDocument 403 /redirect.html
-
+ErrorDocument 404 redirect.html
+ErrorDocument 403 redirect.html
 
 Options -Indexes
-
-<IfModule mod_headers.c>
-    Header set Cache-Control "no-cache, no-store, must-revalidate"
-    Header set Pragma "no-cache"
-    Header set Expires 0
-</IfModule>
