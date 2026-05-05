@@ -1,1 +1,5 @@
-*.db
+private/data/*.db
+private/data/*.db-journal
+private/data/*.db-wal
+.DS_Store
+Thumbs.db
