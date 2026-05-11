@@ -88,9 +88,6 @@ try {
                         </div>
                     </a>
                 <?php endforeach; ?>
-            <?php else: ?>
-                <p style="text-align: center; color: #94a3b8; margin-bottom: 80px;">No tools found.</p>
-            <?php endif; ?>
         </div>
     </section>
 
