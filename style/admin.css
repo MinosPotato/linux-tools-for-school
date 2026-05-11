@@ -24,7 +24,6 @@ body {
     font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     line-height: 1.6;
     padding-top: 80px;
-    /* Added to prevent content from going under fixed navbar */
 }
 
 .navbar {
@@ -97,18 +96,17 @@ body {
     background-color: #28a745;
 }
 
-/* Green for adding tools */
+
 .btn-tool:hover {
     background-color: #218838;
 }
 
 .btn-category {
-    background-color: #007bff;
+    background-color: var(--primary);
 }
 
-/* Blue for categories */
 .btn-category:hover {
-    background-color: #0069d9;
+    background-color: var(--primary2);
 }
 
 .login-box {

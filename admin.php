@@ -156,7 +156,7 @@ $categories = $db->query("SELECT * FROM categories ORDER BY name ASC")->fetchAll
                         <?php foreach ($categories as $cat): ?>
                         <tr>
                             <td><?php echo htmlspecialchars($cat['name']); ?></td>
-                            <td><a href="?delete_cat=<?php echo $cat['id']; ?>" class="btn-delete" onclick="return confirm('Delete this category?')">Delete</a></td>
+                            <td><b><a href="?delete_cat=<?php echo $cat['id']; ?>" class="btn-delete" onclick="return confirm('Delete this category?')">Delete</a></b></td>
                         </tr>
                         <?php endforeach; ?>
                     </tbody>
@@ -176,14 +176,15 @@ $categories = $db->query("SELECT * FROM categories ORDER BY name ASC")->fetchAll
             <tbody>
                 <?php foreach ($tools as $tool): ?>
                 <tr>
-                    <td><?php echo htmlspecialchars($tool['name']); ?></td>
-                    <td><?php echo htmlspecialchars($tool['url']); ?></td>
-                    <td>
+                    <td><b><?php echo htmlspecialchars($tool['name']); ?></b></td>
+                    <td><b><?php echo htmlspecialchars($tool['url']); ?></b></td>
+                    <td><b>
                         <a href="?delete_tool=<?php echo $tool['id']; ?>"
                            class="btn-delete"
                            onclick="return confirm('Are you sure?')">Delete</a>
-                    </td>
+                    </b></td>
                 </tr>
+                <tr><td colspan="3"><?php echo htmlspecialchars($tool['description']); ?></td></tr>
                 <?php endforeach; ?>
             </tbody>
         </table>
