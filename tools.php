@@ -38,16 +38,16 @@ try {
 
 <body>
 
-	<nav class="navbar">
-        <div class="nav-container">
-            <a href="./" class="logo"">LINUX FOR SCHOOL</a>
-            <div class="nav-links">
-                <a href="/">Home</a>
-                <a href="tools.php">All Tools</a>
+        <nav class="navbar">
+            <div class="nav-container">
+                <a href="index.html" class="logo">LINUX FOR SCHOOL</a>
+                <div class="nav-links">
+                    <a href="index.html">Home</a>
+                    <a href="tools.php">All Tools</a>
+                </div>
+                <a href="https://github.com/MinosPotato" class="btn-github">My GitHub</a>
             </div>
-            <a href="https://github.com/MinosPotato" class="btn-github">My GitHub</a>
-        </div>
-    </nav>
+        </nav>
 
     <section class="tools-header">
         <div class="container">
