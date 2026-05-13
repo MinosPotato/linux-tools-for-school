@@ -4,3 +4,6 @@ private/data/*.db-wal
 .DS_Store
 Thumbs.db
 .cache/*
+private/config.php
+*/config.php
+config.php
