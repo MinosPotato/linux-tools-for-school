@@ -5,5 +5,4 @@ private/data/*.db-wal
 Thumbs.db
 .cache/*
 private/config.php
-*/config.php
-config.php
+private/config.php
