@@ -29,16 +29,17 @@ if (!isset($_SESSION['admin_logged_in']) || $_SESSION['admin_logged_in'] !== tru
         <link rel="stylesheet" href="style/admin.css">
     </head>
     <body>
-        <nav class="navbar">
-            <div class="nav-container">
-                <a href="index.html" class="logo">LINUX FOR SCHOOL</a>
-                <div class="nav-links">
-                    <a href="index.html">Home</a>
-                    <a href="tools.php">All Tools</a>
-                </div>
-                <a href="https://github.com/MinosPotato" class="btn-github">My GitHub</a>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">LINUX FOR SCHOOL</a>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="tools.php">All Tools</a>
+                <a href="about.html">About</a>
             </div>
-        </nav>
+            <a href="https://github.com/MinosPotato" class="btn-github">My GitHub</a>
+        </div>
+    </nav>
         <div class="login-box">
             <h2>Admin Access</h2>
             <?php if(isset($error)) echo "<p class='error-text'>$error</p>"; ?>
@@ -114,6 +115,7 @@ $categories = $db->query("SELECT * FROM categories ORDER BY name ASC")->fetchAll
             <div class="nav-links">
                 <a href="/">Home</a>
                 <a href="tools.php">All Tools</a>
+                <a href="about.html">About</a>
             </div>
             <a href="?logout=1" class="btn-logout">Logout</a>
         </div>

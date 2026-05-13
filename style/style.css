@@ -139,7 +139,7 @@ body {
     gap: 25px;
 }
 
-.card {
+.card-features {
     background-color: var(--bg2);
     border: 2px solid var(--border);
     border-radius: 8px;
@@ -150,19 +150,19 @@ body {
     display: block;
 }
 
-.card:hover {
+.card-features:hover {
     border-color: var(--primary);
     background-color: var(--bg3);
 }
 
-.card h3 {
+.card-features h3 {
     margin: 15px 0 10px;
     font-size: 1.2rem;
     color: var(--text);
     font-weight: 700;
 }
 
-.card p {
+.card-features p {
     color: var(--text2);
     font-size: 0.9rem;
     margin-bottom: 20px;
@@ -294,4 +294,68 @@ body {
     .filter-input {
         width: 100%;
     }
+}
+
+.about-header {
+    padding: 140px 0 50px;
+    text-align: center;
+}
+
+.card-about {
+    background-color: var(--bg2);
+    border: 2px solid var(--border);
+    border-radius: 8px;
+    padding: 30px;
+    transition: border-color 0.2s ease, background 0.2s ease;
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+
+.card-about h3 {
+    margin: 15px 0 10px;
+    font-size: 1.2rem;
+    color: var(--text);
+    font-weight: 700;
+}
+
+.card-about p {
+    color: var(--text2);
+    font-size: 0.9rem;
+    margin-bottom: 20px;
+}
+
+.card-about a {
+    color: var(--text3);
+    text-decoration: none;
+    font-size: 0.9rem;
+    margin-bottom: 20px;
+}
+
+.card-about ul {
+    font-size: 0.9rem;
+    margin-bottom: 20px;
+}
+
+#random-grade {
+    font-size: 3rem;
+    color: var(--primary);
+}
+
+.btn-random-grade {
+    padding: 6px 12px;
+    border-radius: 8px;
+    font-weight: 700;
+    background-color: var(--primary);
+    color: var(--text);
+    text-decoration: none;
+    font-size: 0.9rem;
+    display: inline-block;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
+.btn-random-grade:hover {
+    background-color: var(--primary2);
 }

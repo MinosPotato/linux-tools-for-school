@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Linux for school</title>
+    <link rel="stylesheet" href="style/style.css">
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">LINUX FOR SCHOOL</a>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="tools.php">All Tools</a>
+                <a href="about.html">About</a>
+            </div>
+            <a href="https://github.com/MinosPotato" class="btn-github">My GitHub</a>
+        </div>
+    </nav>
+
+    <section class="about-header">
+        <h1>About</h1>
+    </section>
+
+    <section class="about-info">
+        <div class="container grid">
+            <div class="card-about">
+                <h3>Sources</h3>
+                <ul>
+                    <li><a href="https://www.w3schools.com/">W3Schools</a></li>
+                    <li><a href="https://ollama.com/library/gemma4">Gemma4 </a> (locally hosted, used for help with
+                        design choices and .htacess)</li>
+                    <li><a href="https://www.kali.org/">Kali Linux Website</a> (Inspiration & Colors)</li>
+                </ul>
+            </div>
+            <div class="card-about">
+                <h3>Suggested Grade:</h3>
+                <p id="random-grade"></p>
+                <button type="button" class="btn-random-grade"
+                    onclick="document.getElementById('random-grade').innerHTML = (Math.random() *0.05 +5.95).toFixed(2)">Click
+                    Me For
+                    a
+                    Random Grade</button>
+            </div>
+        </div>
+    </section>
+
+    <footer class=" footer">
+        Built as a school project.
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

@@ -20,6 +20,7 @@ function easteregg() {
 
 }
 
+
 const searchInput = document.getElementById('searchInput');
 const categorySelect = document.getElementById('categorySelect');
 const toolItems = document.querySelectorAll('.tool-item');
