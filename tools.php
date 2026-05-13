@@ -88,6 +88,7 @@ try {
                         </div>
                     </a>
                 <?php endforeach; ?>
+            <?php endif; ?>
         </div>
     </section>
 

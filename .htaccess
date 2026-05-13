@@ -1,5 +1,4 @@
 <RequireAny>
-	Require all denied
     Require ip 192.168.1.0/24
     Require ip 83.150.5.0/24
     Require ip 141.195.93.0/24
@@ -7,10 +6,12 @@
     Require expr %{HTTP_USER_AGENT} =~ /X-Ray-Enabled/
 </RequireAny>
 
+ErrorDocument 404 /2026/2gNP/e675a3cf/redirect.html
+ErrorDocument 403 /2026/2gNP/e675a3cf/redirect.html
+Options -Indexes
+
 RewriteEngine On
 
 RewriteRule ^private/(.*)$ /redirect.html [L,R=301]
 
-ErrorDocument 404 /2026/2gNP/e675a3cf/redirect.html
-ErrorDocument 403 /2026/2gNP/e675a3cf/redirect.html
-Options -Indexes
+
