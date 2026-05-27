@@ -43,3 +43,14 @@ function filterTools() {
 
 searchInput.addEventListener('input', filterTools);
 categorySelect.addEventListener('change', filterTools);
+
+
+
+
+function randomgrade() {
+    const anim = document.getElementById('random-grade');
+    anim.innerHTML = (Math.random() *0.05 +5.95).toFixed(2);
+    anim.classList.remove('animate');
+    void anim.offsetWidth;
+    anim.classList.add('animate');
+}

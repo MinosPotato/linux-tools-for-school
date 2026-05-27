@@ -341,6 +341,9 @@ body {
 #random-grade {
     font-size: 3rem;
     color: var(--primary);
+    display: flex;
+    justify-content: left;
+    align-items: left;
 }
 
 .btn-random-grade {
@@ -354,8 +357,26 @@ body {
     display: inline-block;
     text-transform: uppercase;
     text-decoration: none;
+
 }
 
 .btn-random-grade:hover {
     background-color: var(--primary2);
+}
+
+
+@keyframes pop-in {
+      0% {
+        opacity: 0;
+        transform: scale(0.1);
+      }
+      100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.animate {
+    animation: pop-in 0.5s ease-out;
+    animation-fill-mode: backwards;
 }
