@@ -34,6 +34,7 @@ try {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>All Tools - Linux for school</title>
     <link rel="stylesheet" href="style/style.css">
+    <link rel="icon" href="assets/cards/no-microsoft.png">
 </head>
 
 <body>
@@ -45,6 +46,7 @@ try {
                 <a href="index.html">Home</a>
                 <a href="tools.php">All Tools</a>
                 <a href="about.html">About</a>
+                <a href="admin.php">Admin</a>
             </div>
             <a href="https://github.com/MinosPotato" class="btn-github">My GitHub</a>
         </div>

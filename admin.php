@@ -27,6 +27,7 @@ if (!isset($_SESSION['admin_logged_in']) || $_SESSION['admin_logged_in'] !== tru
         <meta charset="UTF-8">
         <title>Admin Login</title>
         <link rel="stylesheet" href="style/admin.css">
+        <link rel="icon" href="assets/cards/no-microsoft.png">
     </head>
     <body>
     <nav class="navbar">
@@ -36,6 +37,7 @@ if (!isset($_SESSION['admin_logged_in']) || $_SESSION['admin_logged_in'] !== tru
                 <a href="index.html">Home</a>
                 <a href="tools.php">All Tools</a>
                 <a href="about.html">About</a>
+                <a href="admin.php">Admin</a>
             </div>
             <a href="https://github.com/MinosPotato" class="btn-github">My GitHub</a>
         </div>
@@ -107,15 +109,17 @@ $categories = $db->query("SELECT * FROM categories ORDER BY name ASC")->fetchAll
     <meta charset="UTF-8">
     <title>Admin Panel - Tool Manager</title>
     <link rel="stylesheet" href="style/admin.css">
+    <link rel="icon" href="assets/cards/no-microsoft.png">
 </head>
 <body>
     <nav class="navbar">
         <div class="nav-container">
             <a href="./" class="logo">LINUX FOR SCHOOL</a>
             <div class="nav-links">
-                <a href="/">Home</a>
+                <a href="index.html">Home</a>
                 <a href="tools.php">All Tools</a>
                 <a href="about.html">About</a>
+                <a href="admin.php">Admin</a>
             </div>
             <a href="?logout=1" class="btn-logout">Logout</a>
         </div>
